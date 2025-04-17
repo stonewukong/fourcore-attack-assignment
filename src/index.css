@@ -21,15 +21,45 @@
   --color-background: #020817;
   --color-primary: #050b1b;
   --color-stroke: #1e293b;
+  --color-container: #070e21;
 }
 
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
+  scrollbar-width: thin;
 }
 
 #root {
   height: 100vh;
   width: 100vw;
+}
+
+/* Custom Scrollbar for #tabs-container */
+#content-container::-webkit-scrollbar {
+  width: 5px; /* Make scrollbar thinner */
+  height: 5px; /* For horizontal scrollbar if ever needed */
+}
+
+#content-container::-webkit-scrollbar-track {
+  background: transparent; /* Remove track background */
+}
+
+#content-container::-webkit-scrollbar-thumb {
+  background-color: #1e293b;
+  border-radius: 20px; /* Rounded thumb */
+  border: none; /* No border around thumb */
+}
+
+#content-container::-webkit-scrollbar-thumb:hover {
+  background-color: #1e293b;
+}
+
+/* Firefox Scrollbar Styles */
+#content-container {
+  scrollbar-width: thin; /* Use thin scrollbar */
+  scrollbar-color: #1e293b transparent;
 }
